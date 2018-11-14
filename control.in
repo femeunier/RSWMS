@@ -1,0 +1,55 @@
+﻿***** APPLICATION CONTROL PARAMETERS *****
+
+***UNITS***********************************************
+[L]   [T]      [M]  Concentration    [P]:
+'cm'  'days'  'g'  'microMole/cm3'   'MPa'
+
+***BASIC INFORMATION***
+itMax itMaxRoot
+ 30      20
+
+RelEps	factorRelEps 
+f	 1000
+
+errH    errWC   errRootPH  errSink
+0.05     .02      0.1      0.0001
+
+dt     dtMin    dtMax   FacInc  FacDec  dtRoot
+0.01  .00000001   0.01     1.1    0.9     0.05
+
+lRetry | last_out	 
+f      	 10
+
+***OUTPUT INFORMATION*************************************
+nOUT 
+10
+
+tOut
+25.01 25.5 26 26.5 27 27.5 28 28.5 29 29.5 30 30.5
+
+lvtk	lOutpartrace   profOK	
+t	     f	         f
+
+dtprof 
+0.2
+
+***ROOT INFORMATION*****************************************
+Root Water Uptake model					| Sink type
+lno_RWU	   lFeddes	  lDoussan	lCouvreur 	| lSinkCube
+f 	   f		  t		 f		   t
+
+Initial architecture type 
+lno_Archi	     lRootSys(lrrs)	lRootTyp(lrrt)
+f		     f			t
+
+Root growth model 
+lno_root_growth	  lRootTyp_growth	lSomma_growth	lUpdate_growth
+t		  f			f		f
+
+***PROCESS INFORMATION****************************************
+lCalloc	   lChem	ltemp	lcontinu	lSalinity	lPartUp lRhizo	lClimate	
+f	   f		f	t		f		f       f        f
+
+***SOLVER METHODS*********************************************
+ldirect	  laveraging(old) 	lmem_reduc(ana_aan)	ltab
+f	  t			t			f
